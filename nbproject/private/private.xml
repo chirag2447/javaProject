@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/src/java/Entity/Product.java</file>
+            <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/web/home.xhtml</file>
+            <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/web/manShoes.xhtml</file>
+            <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/web/Admin/users.xhtml</file>
+            <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/src/java/Ejb/AdminSessionBean.java</file>
+            <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/web/Admin/updateImage.xhtml</file>
+            <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/web/includes/nav.xhtml</file>
+            <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/web/shoe.xhtml</file>
+            <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/web/Admin/updateProduct.xhtml</file>
+            <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/web/Admin/addImage.xhtml</file>
+            <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/web/includes/top_info_container.xhtml</file>
+            <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/src/java/filter/NewFilter.java</file>
+            <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/web/Admin/updateCategory.xhtml</file>
+            <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/src/java/servlet/secure.java</file>
+            <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/src/java/bean/NewJSFManagedBean.java</file>
+            <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/web/index.xhtml</file>
+            <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/web/login-reg/login.xhtml</file>
+            <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/web/Admin/products.xhtml</file>
+            <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/web/Admin/addProduct.xhtml</file>
+            <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/web/WEB-INF/beans.xml</file>
+            <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/src/java/Entity/Cart.java</file>
+            <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/src/java/bean/UserBean.java</file>
+            <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/src/java/Ejb/userSessionBeanLocal.java</file>
+            <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/web/Admin/addCategory.xhtml</file>
+            <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/web/Admin/includes/nav-header.xhtml</file>
+            <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/web/Admin/image.xhtml</file>
+            <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/web/includes/header_and_container.xhtml</file>
+            <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/web/Admin/index.xhtml</file>
+            <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/src/java/Ejb/userSessionBean.java</file>
+            <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/web/cart.xhtml</file>
+            <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/web/Admin/category.xhtml</file>
+            <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/web/login-reg/register.xhtml</file>
+            <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/src/java/servlet/NewServlet.java</file>
+            <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/web/allCategories.xhtml</file>
+            <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/src/java/Entity/Image.java</file>
+        </group>
+    </open-files>
+</project-private>

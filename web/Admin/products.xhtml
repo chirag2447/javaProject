@@ -1,0 +1,183 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="description" content=""/>
+        <meta name="author" content=""/>
+
+        <title>SB Admin - Bootstrap Admin Template</title>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.2/js/bootstrap.min.js" integrity="sha512-5BqtYqlWfJemW5+v+TZUs22uigI8tXeVah5S/1Z6qBLVO7gakAOtkOzUtgq6dsIo5c0NJdmGPs0H9I+2OHUHVQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></link>
+        <!-- Bootstrap Core CSS -->
+        <link href="adcss/bootstrap.min.css" rel="stylesheet"/>
+
+        <!-- Custom CSS -->
+        <link href="adcss/sb-admin.css" rel="stylesheet"/>
+
+        <!-- Custom Fonts -->
+        <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <link href="adcss/styles.css" rel="stylesheet"/>
+
+
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+
+
+        <script src="http://tinymce.cachefly.net/4.1/tinymce.min.js"></script>
+        <script src="https://cdn.tiny.cloud/1/i73q18ibb9sxyyc1ifngr9lwu5qnv6yhoz2zdvz4ac65syqi/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+
+
+        <!-- Can use this one below as well -->
+        <!--   <script src="http://cdn.tinymce.com/4/tinymce.min.js"></script> -->
+
+
+        <script src="adjs/jquery.js"></script>
+    </h:head>
+    <h:body>
+
+        <div id="wrapper">
+
+
+
+             <ui:insert name="header">
+                <ui:include src="includes/nav-header.xhtml"/>
+            </ui:insert> 
+
+            <div id="page-wrapper">
+
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="row" style="min-height: 100vh;">
+                        <div class="col-lg-12">
+
+                            <h1 class="page-header">
+                                Welcome to admin
+                                <small><?php echo $_SESSION['username']; ?></small>
+                            </h1>
+
+
+
+                            <f:view>
+
+
+                                <h:form>
+                                    <h1><h:outputText value="List"/></h1>
+                                    <h:dataTable class="table"  value="#{newJSFManagedBean.products}" var="item">
+                                        <h:column > 
+                                            
+                                            <f:facet  name="header">
+                                                <h:outputText  value="Id"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.id}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="Name"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.name}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="BrandId"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.brandId.brand}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="Image"/>
+                                            </f:facet>
+                                            <h:graphicImage height="50" url="../images/#{item.image}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="Price"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.price}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="ColorId"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.colorId.color}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="SizeId"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.sizeId.size}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="CatId"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.catId.catName}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="Delete"/>
+                                            </f:facet>
+                                            <h:commandButton action="#{newJSFManagedBean.deleteProduct(item.id)}" value="Delete"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="Update"/>
+                                            </f:facet>
+                                            <h:commandButton action="#{newJSFManagedBean.searchProduct(item.id)}" value="Update"/>
+                                        </h:column>
+                                        
+                                    </h:dataTable>
+                                </h:form>
+                            </f:view>
+
+
+
+
+
+
+                        </div>
+                    </div>
+                    <!-- /.row -->
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+        </div>
+
+
+            <!-- /#page-wrapper -->
+
+
+
+
+
+
+
+            <!-- /#wrapper -->
+
+            <!-- jQuery -->
+
+
+
+            <script src="adjs/scripts.js"></script>
+
+            <!-- Bootstrap Core JavaScript -->
+            <script src="adjs/bootstrap.min.js"></script>
+
+    </h:body>
+</html>
+
