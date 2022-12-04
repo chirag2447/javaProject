@@ -9,6 +9,8 @@
 
         <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic|Dosis:200,300,400,500,600,700,800|Abel|Droid+Sans:400,700|Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic|Lora:400,700,400italic,700italic|PT+Sans:400,700,400italic,700italic|PT+Sans+Narrow:400,700|Quicksand:300,400,700|Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic|Lobster|Ubuntu+Condensed|Oxygen:400,300,700|Oswald:700,400,300|Open+Sans+Condensed:300,700,300italic|Roboto+Condensed:300italic,400italic,700italic,400,700,300|Open+Sans:300italic,400italic,600italic,700italic,800italic,800,700,400,600,300|Prosto+One|Francois+One|Comfortaa:700,300,400|Raleway:300,600,900,500,400,100,800,200,700|Roboto:300,700,500italic,900,300italic,400italic,900italic,100italic,100,500,400,700italic|Roboto+Slab:300,700,100,400|Share:700,700italic,400italic,400' rel='stylesheet' type='text/css'
               />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 
         <base  />
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -2046,7 +2048,7 @@
                                                                                                         name="fi_pricefield_number_159_hidden"
                                                                                                         value="124"
                                                                                                         />
-                                                                                                    <span> USD 30</span>
+                                                                                                    <span> INR 10000</span>
 
                                                                                                     <input
                                                                                                         type="hidden"
@@ -2124,7 +2126,7 @@
                                                                                                         name="fi_pricefield_number_80_hidden"
                                                                                                         value="92"
                                                                                                         />
-                                                                                                    <span> #{p.price}</span>
+                                                                                                    <span> #{p.price} RS.</span>
 
                                                                                                     <input
                                                                                                         type="hidden"
@@ -2237,7 +2239,7 @@
                                                                                                                                                                                                         data-wow-offset=""
                                                                                                                                                                                                         onclick="javascript:CckAddToCart('39', '0', '', this, 'https://ordasvit.com/joomla-shoe-store/');"
                                                                                                                                                                                                         />-->
-                                                                                                    <h:form><h:commandLink onclick="alert('product added to the cart')" action="#{userBean.addToCart(p.id)}" style="margin-bottom: 0; background-color: rgba(51,51, 51, 1  ); font-size: 16px; line-height: 16px; font-weight: bold;color: rgba( 255,255,255,1 ); text-align: right;"
+                                                                                                    <h:form style="height:8rem "><h:commandLink onclick="alert('product added to the cart')" action="#{userBean.addToCart(p.id)}" style="border-radius: 5px;padding: 1rem; background-color: rgba(51,51, 51, 1  ); font-size: 16px; font-weight: bold;color: rgba( 255,255,255,1 ); text-align: right;"
                                                                                                                      value="Add to cart"/></h:form>
                                                                                                                      </div>
                                                                                                         </span>
@@ -2304,6 +2306,7 @@
                                                                                                         ></span
                                                                                                     ></span>
                                                                                                 <span
+                                                                                                    style="border-radius: 5px;"
                                                                                                     class="col_box admin_aria_hidden"
                                                                                                     fid="88"
                                                                                                     hover_animated=""
@@ -2315,15 +2318,16 @@
                                                                                                         font-size: 16px;
                                                                                                         line-height: 16px;
                                                                                                         font-weight: bold;
-                                                                                                        display: block;
+                                                                                                        display: flex;
+                                                                                                        align-items: center;
+                                                                                                        width:100%;
+                                                                                                        
                                                                                                         "
                                                                                                         class="col_box good_tab_item__read_more btn_bg text_textfield_88"
                                                                                                         data-wow-offset=""
-                                                                                                        ><a
-                                                                                                            href="https://ordasvit.com/joomla-shoe-store/index.php/shop/categories/11-men-s_shoes/arber_s:39:70?moduleId=219"
-                                                                                                            >
-                                                                                                            Read more</a
-                                                                                                        ></span
+                                                                                                        >
+                                                                                                        <h:form style="position: absolute;top: 13px;width: 100%;display:flex;align-items: center;"><h:commandLink style="border-radius: 5px;"  action="#{userBean.gToShoe(p.id)}" value="Read More"></h:commandLink></h:form>
+                                                                                                    </span
                                                                                                     >
                                                                                                 </span>
 

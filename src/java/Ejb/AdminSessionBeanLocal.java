@@ -7,6 +7,7 @@ package Ejb;
 import Entity.Brand;
 import Entity.Category;
 import Entity.Color;
+import Entity.Groups;
 import Entity.Image;
 import Entity.Product;
 import Entity.Review;
@@ -100,10 +101,12 @@ public interface AdminSessionBeanLocal {
 
     void updateImage(int id, String image, int product_id, int color_id);
 
-    void addReview(int user_id, String comment, String email, int product_id);
+    void addReview(int user_id, String comment, int product_id);
 
     void deleteReview(int id);
 
-    void updateReview(int id, int user_id, String comment, String email, int product_id);
+    void updateReview(int id, int user_id, String comment, int product_id);
+
+    Groups getGroupByUserName(String name);
     
 }

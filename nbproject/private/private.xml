@@ -10,8 +10,10 @@
             <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/src/java/Ejb/AdminSessionBean.java</file>
             <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/web/Admin/updateImage.xhtml</file>
             <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/web/includes/nav.xhtml</file>
+            <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/src/java/Ejb/AdminSessionBeanLocal.java</file>
             <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/web/shoe.xhtml</file>
             <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/web/Admin/updateProduct.xhtml</file>
+            <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/web/Admin/color.xhtml</file>
             <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/web/Admin/addImage.xhtml</file>
             <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/web/includes/top_info_container.xhtml</file>
             <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/src/java/filter/NewFilter.java</file>
@@ -23,9 +25,11 @@
             <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/web/WEB-INF/web.xml</file>
             <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/web/Admin/products.xhtml</file>
             <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/web/Admin/addProduct.xhtml</file>
+            <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/web/includes/head.xhtml</file>
             <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/web/WEB-INF/beans.xml</file>
             <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/src/java/Entity/Cart.java</file>
             <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/src/java/bean/UserBean.java</file>
+            <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/web/Admin/reviews.xhtml</file>
             <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/src/java/Ejb/userSessionBeanLocal.java</file>
             <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/web/Admin/addCategory.xhtml</file>
             <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/web/Admin/includes/nav-header.xhtml</file>
@@ -36,6 +40,7 @@
             <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/web/cart.xhtml</file>
             <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/web/Admin/category.xhtml</file>
             <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/web/login-reg/register.xhtml</file>
+            <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/src/java/Entity/User.java</file>
             <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/src/java/servlet/NewServlet.java</file>
             <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/web/allCategories.xhtml</file>
             <file>file:/C:/Users/chpan/OneDrive/Desktop/shoeStore/src/java/Entity/Image.java</file>

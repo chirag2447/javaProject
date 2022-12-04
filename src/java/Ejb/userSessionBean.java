@@ -8,6 +8,7 @@ import Entity.Cart;
 import Entity.Category;
 import Entity.Image;
 import Entity.Product;
+import Entity.Review;
 import Entity.User;
 import java.util.List;
 import javax.ejb.Stateless;
@@ -118,7 +119,22 @@ public class userSessionBean implements userSessionBeanLocal {
        c.forEach((n)->em.remove(n));
     }
 
-    
+     @Override
+    public void addReview(int user_id, String comment, int product_id) {
+        User u = (User) em.createNamedQuery("User.findByUId").setParameter("uId", user_id).getSingleResult();
+        Product p = (Product) em.createNamedQuery("Product.findById").setParameter("id", product_id).getSingleResult();
+        Review r = new Review();
+        r.setUId(u);
+        r.setRComment(comment);
+        r.setPId(p);
+        em.persist(r);
+    }
+
+    @Override
+    public User findUserByName(String name) {
+        User u =(User) em.createNamedQuery("User.findByUName").setParameter("uName", name).getSingleResult();
+        return u;
+    }
     
     
     

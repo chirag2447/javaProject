@@ -30,7 +30,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @NamedQueries({
     @NamedQuery(name = "Image.findAll", query = "SELECT i FROM Image i"),
     @NamedQuery(name = "Image.findByIId", query = "SELECT i FROM Image i WHERE i.iId = :iId"),
-    @NamedQuery(name = "Image.findBypId", query = "SELECT i FROM Image i WHERE i.pId = :pId"),
+        @NamedQuery(name = "Image.findBypId", query = "SELECT i FROM Image i WHERE i.pId = :pId"),
 
     @NamedQuery(name = "Image.findByIImage", query = "SELECT i FROM Image i WHERE i.iImage = :iImage")})
 public class Image implements Serializable {
@@ -121,5 +121,5 @@ public class Image implements Serializable {
     public String toString() {
         return "Entity.Image[ iId=" + iId + " ]";
     }
-
+    
 }

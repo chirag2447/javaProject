@@ -8,8 +8,10 @@ import Ejb.AdminSessionBeanLocal;
 import Entity.Brand;
 import Entity.Category;
 import Entity.Color;
+import Entity.Groups;
 import Entity.Image;
 import Entity.Product;
+import Entity.Review;
 import Entity.Size1;
 import Entity.User;
 import java.io.File;
@@ -42,7 +44,7 @@ public class NewJSFManagedBean implements Serializable {
     @EJB
     AdminSessionBeanLocal ejb;
       
-    
+    List<Review> review;
     String aloggedUser;
     String name, email, password, address, mobile;
     int uid,bid,coid,sid;
@@ -61,6 +63,14 @@ public class NewJSFManagedBean implements Serializable {
     int image_id;
     String image_pId,image_cId;
     String imageI;
+
+    public List<Review> getReview() {
+        return ejb.showAllReview();
+    }
+
+    public void setReview(List<Review> review) {
+        this.review = review;
+    }
 
     public String getAloggedUser() {
         HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false);
@@ -669,7 +679,22 @@ public class NewJSFManagedBean implements Serializable {
     public void setUsers(List<User> users) {
         this.users = users;
     }
+public String role(){
+    Groups g =ejb.getGroupByUserName(getAloggedUser());
+    
+    return g.getName();
+}
 
+String role;
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role();
+    }
+    
     public NewJSFManagedBean() {
     }
 

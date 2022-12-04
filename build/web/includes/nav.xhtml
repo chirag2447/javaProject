@@ -9,14 +9,15 @@
     <h:body>
 
         <ui:composition >
-            <nav style="display:flex;justify-content: end;"  class="navbar navbar-light bg-light">
-                <h4 style="justify-self:start;">Welcome <b><h:outputText value="#{userBean.loggedUser}"/></b> </h4>
-                <div>
-                    <a style="height:100%;background:lightblue;color: black;display:flex;align-items: center;margin: 0 1rem;" class="btn btn-outline-success my-2 my-sm-0"   href="login-reg/login.jsf"  >Login</a>
+            <nav style="width: 100%;display:flex;justify-content: space-between;"  class="navbar navbar-light bg-light">
+                <h4 style="flex-grow: 2;text-align: start;margin-left: 2rem;">Welcome <b><h:outputText value="#{userBean.loggedUser}"/></b> </h4>
+                <div style="display:flex;">
+                <div style="justify-self: flex-end;">
+                    <a  class="cck_search_btn btn_bg  button btn btn-primary" style="height:100%;width: 9rem;display:flex;align-items: center;margin: 0 1rem;"   href="login-reg/login.jsf"  >Login</a>
                 </div>
-                <h:form><h:commandButton style="height:130%;background:lightblue;color: black;display:flex;align-items: center;" class="btn btn-outline-success my-2 my-sm-0"    value="Logout" action="#{userBean.logout()}"/>
+                <h:form style="justify-self: flex-end"><h:commandButton  style="height:130%;width:9rem;display:flex;align-items: center;"  class="cck_search_btn btn_bg  button btn btn-primary"    value="Logout" action="#{userBean.logout()}"/>
                 </h:form> 
-
+                </div>
             </nav>
         </ui:composition>
     </h:body>

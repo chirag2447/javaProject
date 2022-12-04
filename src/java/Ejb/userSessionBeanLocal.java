@@ -41,6 +41,9 @@ public interface userSessionBeanLocal {
     Long getCartCount(String name);
 
     void deleteCartProduct(int id);
+    void addReview(int user_id, String comment, int product_id);
+
+    User findUserByName(String name);
 
 
 }

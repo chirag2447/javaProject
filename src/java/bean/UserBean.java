@@ -9,6 +9,7 @@ import Entity.Cart;
 import Entity.Category;
 import Entity.Image;
 import Entity.Product;
+import Entity.User;
 import java.io.IOException;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
@@ -223,18 +224,28 @@ public class UserBean implements Serializable {
 
             HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false);
             session.invalidate();
-        try {
-            FacesContext.getCurrentInstance().getExternalContext().redirect("login-reg/login.jsf");
-        } catch (IOException ex) {
-            Logger.getLogger(UserBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            FacesContext.getCurrentInstance().getExternalContext().redirect("login-reg/login.jsf");
+//        } catch (IOException ex) {
+//            Logger.getLogger(UserBean.class.getName()).log(Level.SEVERE, null, ex);
+//        }
 
+    }
+    int logged_id;
+
+    public int getLogged_id() {
+        return logged_id;
+    }
+
+    public void setLogged_id(int logged_id) {
+        this.logged_id = logged_id;
     }
     
 
     public String getLoggedUser() {
             HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false);
-
+//            User u =ejb.findUserByName(loggedUser);
+//            logged_id = u.getUId();
         return (String) session.getAttribute("username");
     }
 
@@ -312,8 +323,37 @@ public void deleteCart(int id){
     public void setCount(Long count) {
         this.count = count;
     }
-   
-    public UserBean() {
+    
+    
+    public void loggedId(){
+       
+          
+                
+        User u = ejb.findUserByName(getLoggedUser());
+        logged_id = u.getUId();
+            
+        
+    }
+    
+    String review;
+
+    public String getReview() {
+        return review;
     }
 
+    public void setReview(String review) {
+        this.review = review;
+    }
+    
+   public void addReview(){
+       if(getLoggedUser() != null){
+           
+       loggedId();
+       
+       ejb.addReview(logged_id, review, shoe_id);
+       }
+   }
+    public UserBean() {
+    }
+    
 }

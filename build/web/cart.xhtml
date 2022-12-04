@@ -9,6 +9,8 @@
 
         <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic|Dosis:200,300,400,500,600,700,800|Abel|Droid+Sans:400,700|Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic|Lora:400,700,400italic,700italic|PT+Sans:400,700,400italic,700italic|PT+Sans+Narrow:400,700|Quicksand:300,400,700|Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic|Lobster|Ubuntu+Condensed|Oxygen:400,300,700|Oswald:700,400,300|Open+Sans+Condensed:300,700,300italic|Roboto+Condensed:300italic,400italic,700italic,400,700,300|Open+Sans:300italic,400italic,600italic,700italic,800italic,800,700,400,600,300|Prosto+One|Francois+One|Comfortaa:700,300,400|Raleway:300,600,900,500,400,100,800,200,700|Roboto:300,700,500italic,900,300italic,400italic,900italic,100italic,100,500,400,700italic|Roboto+Slab:300,700,100,400|Share:700,700italic,400italic,400' rel='stylesheet' type='text/css'
               />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 
         <base  />
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -307,9 +309,12 @@
 
     </h:head>
     <h:body>
+         <c:choose>
+             <c:when test="#{userBean.loggedUser != null}">
+                
         <ui:insert name="nav">
-    <ui:include src="includes/nav.xhtml"></ui:include>
-</ui:insert>
+            <ui:include src="includes/nav.xhtml"></ui:include>
+        </ui:insert>
         <div id="body">
             <ui:insert>
                 <ui:include src="includes/top_info_container.xhtml"/>
@@ -317,7 +322,7 @@
             <ui:insert>
                 <ui:include src="includes/header_and_container.xhtml"/>
             </ui:insert>
-          
+
 
             <div id="wrapper">
 
@@ -637,14 +642,14 @@
                                                 
                                                                                                 </script>-->
 
-<!--                                                <style type="text/css"> .button_continue_shopping:hover{
-                                                                                                                                                                                                                        color:  !important;
+                                                <!--                                                <style type="text/css"> .button_continue_shopping:hover{
+                                                                                                                                                                                                        color:  !important;
                                                                                                                                                                                                         border-color:  !important;
                                                                                                                                                                                                         background-color:  !important;*/
-
-                                                    }
-                                                </style>-->
-                                                    <div class="row-fluid content-row cck-row-2" data-row-number="2" data-wow-offset="" style="z-index: 50;" old_custom_class="" data-block-styling="margin-bottom:20px;font-weight:normal;" hover_animated=""><div id="cck_col-2" class="resizable span12 col-md-12 col-sm-12 col-xs-12   items  " data-column-number="3" data-wow-offset="" hover_animated="">
+                                                
+                                                                                                    }
+                                                                                                </style>-->
+                                                <div class="row-fluid content-row cck-row-2" data-row-number="2" data-wow-offset="" style="z-index: 50;" old_custom_class="" data-block-styling="margin-bottom:20px;font-weight:normal;" hover_animated=""><div id="cck_col-2" class="resizable span12 col-md-12 col-sm-12 col-xs-12   items  " data-column-number="3" data-wow-offset="" hover_animated="">
                                                         <div class="drop-item"><span class="f-inform-button"></span>
                                                             <!-- popover back/front title -->
                                                             <span class="field-name custom_code_field-1-label-hidden hide-field-name-custom_code_field_1" data-field-name="custom_code_field_1">
@@ -659,7 +664,7 @@
                                                             <span class="col_box admin_aria_hidden" hover_animated="">
                                                                 <span class="cck-prefix"></span><span id="chirag" rel="tooltip" data-toggle="tooltip" data-placement="top" title="" class=" total_price"  data-wow-offset=""  style="margin-bottom:40px;font-size:20px;line-height:20px;font-weight:bold;color:rgba(203, 154, 0, 1);text-align:left;"></span><span class="cck-suffix"></span>              
                                                             </span>
-                                                          
+
                                                             <span class="delete-field"></span></div>
 
 
@@ -688,28 +693,55 @@
                                                                 </div>
 
 
-      <script  type="text/javascript">
-/* <![CDATA[ */
+                                                                <script  type="text/javascript">
+                                                                    /* <![CDATA[ */
 
 
 
 
-      
- 
-                                                                var total = 0;
-                                                                let price = document.getElementsByClassName("chiragPrice");
-                                                                let len = price.length;
-                                                        
-                                                                for(let i=0;i<price.length;i++){
-                                                                    total =Number(total) + Number(price[i].innerHTML);
-                                                                    console.log(total);
-                                                                }
 
-                                                                
-                                                                document.getElementById("chirag").innerHTML = total;
-                                                               
-/* ]]> */
-                                                            </script>
+
+                                                                    var total = 0;
+                                                                    let price = document.getElementsByClassName("chiragPrice");
+                                                                    let len = price.length;
+
+                                                                    for (let i = 0; i < price.length; i++) {
+                                                                        total = Number(total) + Number(price[i].innerHTML);
+                                                                        console.log(total);
+                                                                    }
+
+                                                                    var quantityInputs = document.getElementsByClassName('cart_input_product_quantity');
+                                                                    for (var i = 0; i < quantityInputs.length; i++) {
+                                                                        var input = quantityInputs[i];
+                                                                        input.addEventListener('change', quantityChanged);
+                                                                    }
+                                                                    function quantityChanged(event) {
+                                                                        var input = event.target;
+                                                                        if (isNaN(input.value) || input.value <= 0) {
+                                                                            input.value = 1;
+                                                                        }
+                                                                        updateCartTotal();
+                                                                    }
+                                                                    function updateCartTotal() {
+                                                                        var cartItemContainer = document.getElementsByClassName('all_products')[0];
+                                                                        var cartRows = cartItemContainer.getElementsByClassName('single_product');
+                                                                        var total = 0;
+                                                                        for (var i = 0; i < cartRows.length; i++) {
+                                                                            var cartRow = cartRows[i];
+                                                                            var priceElement = cartRow.getElementsByClassName('chiragPrice')[0];
+                                                                            var quantityElement = cartRow.getElementsByClassName('cart_input_product_quantity')[0];
+                                                                            var price = parseFloat(priceElement.innerText);
+                                                                            var quantity = quantityElement.value;
+                                                                            total = total + (price * quantity);
+                                                                        }
+                                                                        total = Math.round(total * 100) / 100;
+                                                                        document.getElementById("chirag").innerHTML = total;
+                                                                    }
+                                                                    document.getElementById("chirag").innerHTML = total;
+                                                                    
+
+                                                                    /* ]]> */
+                                                                </script>
 
                                                                 <!--<span  >
                                                                       <div id="product_for_cart" class="calculated_price_value" ordering_calculate="">
@@ -1392,6 +1424,14 @@
                     </div>
                 </div>
             </div> <!--id footer-->
-        </div>                 </h:body>
+        </div>          
+             </c:when>
+             <c:otherwise>
+                 <h1 style="position: relative;top:40%;"> Please Login To Access The Cart</h1>
+             </c:otherwise>
+         </c:choose>
+                 </h:body>
+    
+    
 </html>
 

@@ -30,8 +30,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @NamedQueries({
     @NamedQuery(name = "Review.findAll", query = "SELECT r FROM Review r"),
     @NamedQuery(name = "Review.findByRId", query = "SELECT r FROM Review r WHERE r.rId = :rId"),
-    @NamedQuery(name = "Review.findByRComment", query = "SELECT r FROM Review r WHERE r.rComment = :rComment"),
-    @NamedQuery(name = "Review.findByUEmail", query = "SELECT r FROM Review r WHERE r.uEmail = :uEmail")})
+    @NamedQuery(name = "Review.findByRComment", query = "SELECT r FROM Review r WHERE r.rComment = :rComment")})
 public class Review implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -45,11 +44,6 @@ public class Review implements Serializable {
     @Size(min = 1, max = 20)
     @Column(name = "r_comment")
     private String rComment;
-    @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 20)
-    @Column(name = "u_email")
-    private String uEmail;
     @JoinColumn(name = "p_id", referencedColumnName = "id")
     @ManyToOne(optional = false)
     private Product pId;
@@ -64,10 +58,9 @@ public class Review implements Serializable {
         this.rId = rId;
     }
 
-    public Review(Integer rId, String rComment, String uEmail) {
+    public Review(Integer rId, String rComment) {
         this.rId = rId;
         this.rComment = rComment;
-        this.uEmail = uEmail;
     }
 
     public Integer getRId() {
@@ -84,14 +77,6 @@ public class Review implements Serializable {
 
     public void setRComment(String rComment) {
         this.rComment = rComment;
-    }
-
-    public String getUEmail() {
-        return uEmail;
-    }
-
-    public void setUEmail(String uEmail) {
-        this.uEmail = uEmail;
     }
 
     public Product getPId() {

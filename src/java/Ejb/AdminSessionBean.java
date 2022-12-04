@@ -7,6 +7,7 @@ package Ejb;
 import Entity.Brand;
 import Entity.Category;
 import Entity.Color;
+import Entity.Groups;
 import Entity.Image;
 import Entity.Product;
 import Entity.Review;
@@ -290,13 +291,12 @@ public class AdminSessionBean implements AdminSessionBeanLocal {
     }
 
     @Override
-    public void addReview(int user_id, String comment, String email, int product_id) {
+    public void addReview(int user_id, String comment, int product_id) {
         User u = (User) em.createNamedQuery("User.findByUId").setParameter("uId", user_id).getSingleResult();
         Product p = (Product) em.createNamedQuery("Product.findById").setParameter("id", product_id).getSingleResult();
         Review r = new Review();
         r.setUId(u);
         r.setRComment(comment);
-        r.setUEmail(email);
         r.setPId(p);
         em.persist(r);
     }
@@ -315,13 +315,12 @@ public class AdminSessionBean implements AdminSessionBeanLocal {
     }
 
     @Override
-    public void updateReview(int id, int user_id, String comment, String email, int product_id) {
+    public void updateReview(int id, int user_id, String comment, int product_id) {
         User u = (User) em.createNamedQuery("User.findByUId").setParameter("uId", user_id).getSingleResult();
         Product p = (Product) em.createNamedQuery("Product.findById").setParameter("id", product_id).getSingleResult();
         Review r = (Review) em.createNamedQuery("Review.findByRId").setParameter("rId", id).getSingleResult();
         r.setUId(u);
         r.setRComment(comment);
-        r.setUEmail(email);
         r.setPId(p);
         em.merge(r);
     }
@@ -372,6 +371,12 @@ public class AdminSessionBean implements AdminSessionBeanLocal {
     public Subcategory searchSubCategory(int id) {
         Subcategory s = (Subcategory) em.createNamedQuery("Subcategory.findBySubcatId").setParameter("subcatId", id).getSingleResult();
         return s;
+    }
+
+    @Override
+    public Groups getGroupByUserName(String name) {
+        Groups g =(Groups) em.createNamedQuery("Groups.findByName").setParameter("name", name).getSingleResult();
+        return g;
     }
 
 }
